@@ -2,70 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../ArrayChallenges/CompareTwoValues/src/com/BryceLooyenga/CompareValues/CompareTwoValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ArrayChallenges/DuplicateValues/src/com/BryceLooyenga/DuplicateValues/DuplicateValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ArrayChallenges/MaxValue/src/com/BryceLooyenga/MaxValue/MaxValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ArrayChallenges/RemoveElement/src/com/BryceLooyenga/RemoveElement/RemoveElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ArrayChallenges/SortedArray/src/com/BryceLooyenga/SortedArrays/SortArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ArrayChallenges/SumOfValues/src/com/brycelooyenga/sumofvalues/SumValues.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../ArrayChallenges/howManyDashes/src/com/BryceLooyenga/howManyDashes/LineArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calculator/src/com/brycelooyenga/calculator/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calculator/src/com/brycelooyenga/calculator/Carpet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calculator/src/com/brycelooyenga/calculator/Floor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Calculator/src/com/brycelooyenga/calculator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ComplexNumber/src/com/brycelooyenga/complexnumber/ComplexNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Composition/src/com/brycelooyenga/composition/Bed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Composition/src/com/brycelooyenga/composition/Bedroom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Composition/src/com/brycelooyenga/composition/Ceiling.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Composition/src/com/brycelooyenga/composition/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Composition/src/com/brycelooyenga/composition/Wall.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Encapsulation/Encapsulation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EvenDigitSum/src/com/brycelooyenga/evendigitsum/EvenDigitSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../EvenDigitSum/src/com/brycelooyenga/evendigitsum/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactorPrinting/src/com/brycelooyenga/factorprinting/FactorPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactorPrinting/src/com/brycelooyenga/factorprinting/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FirstLastDigitSum/src/com/brycelooyenga/firstlastdigitsum/FirstLastDigitSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FlourPacker/src/com/brycelooyenga/flourpacker/FlourPacker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GreatestCommonDivisor/src/com/brycelooyenga/greatestcommondivisor/GreatestCommonDivisor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../GreatestCommonDivisor/src/com/brycelooyenga/greatestcommondivisor/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../InputCalculator/src/com/brycelooyenga/inputcalculator/InputCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../InputCalculator/src/com/brycelooyenga/inputcalculator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IntEqualityPrinter/IntEqualityPrinter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IntEqualityPrinter/src/com/brycelooyenga/intequalityprinter/IntEqualityPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../IntEqualityPrinter/src/com/brycelooyenga/intequalityprinter/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LargestPrime/LargestPrime.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LargestPrime/src/com/brycelooyenga/largestprime/LargestPrime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LastDigitChecker/src/com/brycelooyenga/lastdigitchecker/LastDigitChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LastDigitChecker/src/com/brycelooyenga/lastdigitchecker/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MinutesToDaysToYears/src/com/brycelooyenga/minutestodaystoyears/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../MinutesToDaysToYears/src/com/brycelooyenga/minutestodaystoyears/MinutesToYearsDaysCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberInWord/src/com/brycelooyenga/numberinword/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberInWord/src/com/brycelooyenga/numberinword/NumberInWord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberOfDaysInAMonth/src/com/brycelooyenga/numberofdays/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberOfDaysInAMonth/src/com/brycelooyenga/numberofdays/NumberOfDaysInMonth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberPalindrome/src/com/brycelooyenga/numberpalindrome/NumberPalindrone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberToWords/src/com/brycelooyenga/numbertowords/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../NumberToWords/src/com/brycelooyenga/numbertowords/NumberToWords.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJob/src/com/brycelooyenga/paintjob/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PaintJob/src/com/brycelooyenga/paintjob/PaintJob.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PerfectNumber/src/com/brycelooyenga/perfectnumber/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PerfectNumber/src/com/brycelooyenga/perfectnumber/PerfectNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Person/src/com/brycelooyenga/person/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PlayingCat/src/com/brycelooyenga/playingcat/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PlayingCat/src/com/brycelooyenga/playingcat/PlayingCat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Point/Point.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Point/src/com/brycelooyenga/point/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SharedDigit/src/com/brycelooyenga/shareddigit/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SharedDigit/src/com/brycelooyenga/shareddigit/SharedDigit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SimpleCalculator/src/com/brycelooyenga/simplecalculator/SimpleCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SumOddRange/src/com/brycelooyenga/sumoddrange/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SumOddRange/src/com/brycelooyenga/sumoddrange/SumOddRange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TeenNumberChecker/TeenNumberChecker.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TeenNumberChecker/src/com/brycelooyenga/teennumberchecker/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TeenNumberChecker/src/com/brycelooyenga/teennumberchecker/TeenNumberChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Wall/src/com/brycelooyenga/wall/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Wall/src/com/brycelooyenga/wall/Wall.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/brycelooyenga/minimumelement/MinimumElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../GridPaneExample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../GridPaneExample/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hamburger/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hamburger/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hamburger/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hamburger/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MinimumElement/com/brycelooyenga/minelement/MinimumElement.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Layouts/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Layouts/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Udemy/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Udemy/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Udemy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Udemy/.idea/workspace.xml" afterDir="false" />
@@ -279,10 +223,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/MinimumElement/com/brycelooyenga/minelement/MinimumElement.java">
+        <entry file="file://$PROJECT_DIR$/src/com/brycelooyenga/minimumelement/MinimumElement.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="390">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
@@ -302,20 +246,21 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/MinimumElement/com/brycelooyenga/minelement/MinimumElement.java" />
+        <option value="$PROJECT_DIR$/src/com/brycelooyenga/minimumelement/MinimumElement.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="76" />
     <option name="y" value="23" />
-    <option name="width" value="1612" />
+    <option name="width" value="1104" />
     <option name="height" value="709" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -345,7 +290,7 @@
               <item name="MinimumElement" type="b2602c69:ProjectViewProjectNode" />
               <item name="MinimumElement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="minelement" type="462c0819:PsiDirectoryNode" />
+              <item name="minimumelement" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -354,16 +299,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -397,9 +343,8 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.brycelooyenga.minimumelement.MinimumElement" />
       <module name="MinimumElement" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sample.*" />
@@ -468,20 +413,20 @@
     <option name="totallyTimeSpent" value="1302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="23" width="1612" height="709" extended-state="0" />
+    <frame x="76" y="23" width="1104" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25286624" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.373823" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32962447" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32901135" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -540,10 +485,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MinimumElement/com/brycelooyenga/minelement/MinimumElement.java">
+    <entry file="file://$PROJECT_DIR$/src/com/brycelooyenga/minimumelement/MinimumElement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="390">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
         </state>
       </provider>
     </entry>
