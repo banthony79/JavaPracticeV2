@@ -44,7 +44,7 @@ public class PriceList {
     }
 
 
-    public Product findProduct(Product newProduct) {
+    private Product findProduct(Product newProduct) {
         for (Product product : prices) {
             if (product.equals(newProduct)) {
 
@@ -56,7 +56,7 @@ public class PriceList {
     }
 
 
-    public Product findProduct(int productCode) {
+    private Product findProduct(int productCode) {
         for (Product product : prices) {
             if (productCode == product.getProductCode()) {
                 return product;

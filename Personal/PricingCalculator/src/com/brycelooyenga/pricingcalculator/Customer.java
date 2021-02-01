@@ -44,6 +44,22 @@ public class Customer {
         }
         return -1; }
 
+    public Product lookUpProduct(int productCode) {
+        for (Product product: this.priceList.getProducts()) {
+            if (productCode == product.getProductCode()) {
+                return product;
+            }
+        }
+        return null; }
+
+    public Product lookUpProduct(String productName) {
+        for (Product product: this.priceList.getProducts()) {
+            if (productName.equals(product.getName())) {
+                return product;
+            }
+        }
+        return null; }
+
 
 
 
