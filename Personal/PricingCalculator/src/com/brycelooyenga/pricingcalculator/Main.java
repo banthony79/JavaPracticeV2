@@ -16,21 +16,27 @@ public class Main {
             ui.addProduct("Inch and a Half Crushed", 35, 68140);
 
             PriceList cat1 = ui.newPriceList("Category 1", 1);
-            PriceList cat2 = ui.newPriceList("Category 2", 1.15);
-            //PriceList cat3 = cat2.raisePrices(10);
+            PriceList cat2 = ui.newPriceList("Category 2", 1.3);
+            PriceList cat3 = ui.newPriceList("Category 3", 1.5);
+            PriceList retail = ui.newPriceList("Retail", 1.10);
 
 
 
             ui.addCustomer("ABC Construction", cat1);
             ui.addCustomer("Bryce's Construction", cat2);
+            ui.addCustomer("BL Excavating", cat3);
+            ui.addCustomer("AAA Construction", retail);
+
+
+
+
 
 
             ui.start();
 
 
-
-
         }
+
 
 
     }

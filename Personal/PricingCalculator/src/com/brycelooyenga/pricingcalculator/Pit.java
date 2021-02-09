@@ -7,12 +7,15 @@ public class Pit {
     private String pitName;
     private int pitNumber;
     private ArrayList<Double> rates;
+    private double pickupDiscount;
 
-    public Pit(String pitName, int pitNumber) {
+    public Pit(String pitName, int pitNumber, double pickupDiscount) {
         this.pitName = pitName;
         this.pitNumber = pitNumber;
         this.rates = new ArrayList<>();
+        this.pickupDiscount = pickupDiscount;
     }
+
 
     public String getPitName() {
         return pitName;
@@ -26,4 +29,27 @@ public class Pit {
         return rates.get(zone - 1);
     }
 
+    public ArrayList<Double> getRates() {
+        return this.rates;
+    }
+
+    public double getPickupDiscount() {
+        return this.pickupDiscount;
+    }
+
+    public void addRates(double [] sourceRates) {
+            for (int i = 0; i < sourceRates.length; i++) {
+                this.rates.add(sourceRates[i]);
+            }
+        }
+
+    @Override
+    public String toString() {
+       return this.pitNumber + ": " + this.pitName;
+    }
+
+
+
 }
+
+
