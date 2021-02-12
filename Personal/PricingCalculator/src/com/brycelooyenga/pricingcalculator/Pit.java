@@ -7,6 +7,7 @@ public class Pit {
     private String pitName;
     private int pitNumber;
     private ArrayList<Double> rates;
+    private ArrayList<Product> products;
     private double pickupDiscount;
 
     public Pit(String pitName, int pitNumber, double pickupDiscount) {
@@ -14,6 +15,7 @@ public class Pit {
         this.pitNumber = pitNumber;
         this.rates = new ArrayList<>();
         this.pickupDiscount = pickupDiscount;
+        this.products = new ArrayList<>();
     }
 
 
@@ -27,6 +29,10 @@ public class Pit {
 
     public double getRate(int zone) {
         return rates.get(zone - 1);
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 
     public ArrayList<Double> getRates() {
@@ -47,6 +53,14 @@ public class Pit {
     public String toString() {
        return this.pitNumber + ": " + this.pitName;
     }
+
+
+    public void addProduct(Product product) {
+        this.products.add(product);
+    }
+
+
+
 
 
 

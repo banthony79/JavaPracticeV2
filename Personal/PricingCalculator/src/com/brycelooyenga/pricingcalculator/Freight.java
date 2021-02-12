@@ -16,18 +16,10 @@ public class Freight {
 
     }
 
-   private String formatter(double dollar) {
+   private static String formatter(double dollar) {
         return "$" + String.format("%.2f", dollar);
    }
 
-
-    public double calculateDeliveredPriceSub() {
-        return product.getPrice() - pit.getRate(zone.getZoneNumber());
-    }
-
-    public double calculateDeliveredPriceAdd() {
-        return product.getPrice() + pit.getRate(zone.getZoneNumber());
-    }
 
     public double calculateDeliveredPriceSub(double price) {
         return price - pit.getRate(zone.getZoneNumber());
@@ -55,7 +47,7 @@ public class Freight {
 
     public String deliverNoProductToString(double price) {
         return  pit.getPitNumber() + ": " + price + " - " + pit.getRate(this.zone.getZoneNumber())
-                + " = " + (price - pit.getRate(this.zone.getZoneNumber()));
+                + " = " + formatter(price - pit.getRate(this.zone.getZoneNumber()));
     }
 
     public String pickUpString(double price) {
@@ -70,6 +62,13 @@ public class Freight {
         "Price Delivered: (freight added): " + formatter(calculateDeliveredPriceAdd(price)) + "\n" +
         "Price Delivered: (freight deducted): " + formatter(calculateDeliveredPriceSub(price))) + "\n";
 
+    }
+
+    public String deliveredString() {
+        return (customer.getName() + "\n" + "(" + product.getName() +")" + formatter(product.getProductCode()) + " - " + formatter(product.getPrice()) + "\n" + "Zone: " + zone.getZoneName() + "\n" + "Freight Rate: "
+                + formatter(pit.getRate(zone.getZoneNumber())) +    "\n" +
+                "Price Delivered: (freight added): " + formatter(calculateDeliveredPriceAdd(product.getPrice())) + "\n" +
+                "Price Delivered: (freight deducted): " + formatter(calculateDeliveredPriceSub(product.getPrice()))) + "\n";
 
     }
 

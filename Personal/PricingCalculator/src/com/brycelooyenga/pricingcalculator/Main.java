@@ -15,6 +15,13 @@ public class Main {
             ui.addProduct("Screenings", 15, 64100);
             ui.addProduct("Inch and a Half Crushed", 35, 68140);
 
+            ui.addProductToPit(66025, 9407);
+            ui.addProductToPit(68225, 9407);
+            ui.addProductToPit(68140, 9407);
+
+            ui.addProductToPit(66025, 9414);
+            ui.addProductToPit(64100, 9414);
+
             PriceList cat1 = ui.newPriceList("Category 1", 1);
             PriceList cat2 = ui.newPriceList("Category 2", 1.3);
             PriceList cat3 = ui.newPriceList("Category 3", 1.5);

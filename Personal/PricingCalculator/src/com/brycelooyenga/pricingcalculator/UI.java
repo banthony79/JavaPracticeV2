@@ -31,6 +31,15 @@ public class UI {
 
 
 
+    public boolean validInput(String input) {
+        try {
+            validInput(input);
+        } catch(IndexOutOfBoundsException e) {
+            System.out.println("Invalid input");
+            return true;
+        }
+  return false;   }
+
     public void start() {
 
         boolean quit = false;
@@ -51,7 +60,15 @@ public class UI {
             }
 
             if (choice == 4) {
-
+                while(true) {
+                    System.out.println("Please enter customer name, press 'X' to cancel");
+                    String customerName = scanner.nextLine();
+                    if (customerName.toUpperCase().equals('X')) {
+                        break;
+                    }
+                    Customer foundCustomer = returnCustomer(customerName);
+                    foundCustomer.printPriceList();
+                }
             }
         }
     }
@@ -86,6 +103,9 @@ public class UI {
     }
 
 
+    //BUILDING THINGS METHODS
+
+
     private void zoneBuilder(Zone zone) {
         int count = 0;
         for (int i = 0; i < pitList.size(); i++) {
@@ -117,6 +137,37 @@ public class UI {
 
     }
 
+    public Product findProduct(int productCode) {
+        for (Product prod : masterList.getProducts()) {
+            if (prod.getProductCode() == productCode) {
+                return prod;
+            }
+        }
+  return null;  }
+
+
+    private boolean productExists(int pitNumber, int productCode) {
+        Pit pit = lookupPit(pitNumber);
+        for (Product prod: pit.getProducts()) {
+            if (prod.getProductCode() == productCode) {
+                return true;
+            }
+        }
+   return false; }
+
+
+   private boolean pitExists(int pitNumber) {
+        for (Pit pit: pitList) {
+            if (pit.getPitNumber() == pitNumber) {
+                return true;
+            }
+        }
+
+        return false; }
+
+
+
+
     public void addPit(String name, int pitNumber, double pitDiscount) {
         pitList.add(new Pit(name, pitNumber, pitDiscount));
     }
@@ -133,6 +184,14 @@ public class UI {
         list.raisePrices(percentage);
         return list;
     }
+
+
+    public void addProductToPit(int productCode, int pitNumber) {
+        Pit pit = lookupPit(pitNumber);
+        Product prod = findProduct(productCode);
+        pit.addProduct(prod);
+    }
+
 
     private Customer returnCustomer(String customerName) {
         for (Customer customer : customerList) {
@@ -180,6 +239,7 @@ public class UI {
 
         return null;
     }
+
 
 
     private void options() {
@@ -253,16 +313,26 @@ public class UI {
     }
 
     private Pit lookupPit(int pitNumber) {
-        for (Pit pit: pitList) {
-            if (pitNumber == pit.getPitNumber()) {
-                return pit;
+
+            for (Pit pit : pitList) {
+                if (pitNumber == pit.getPitNumber()) {
+                    return pit;
+                }
             }
+
+            return null;
+
         }
-   return null; }
+
 
 
    private String returnZoneName(int zone) {
         return zoneNames[zone - 1];
+   }
+
+
+   private static String formatter(double amount) {
+        return String.format("$" + "%.2f", amount);
    }
 
 
@@ -292,7 +362,13 @@ public class UI {
             if (pitNumber == 0) {
                 dispayPits();
             }
-            Pit foundPit = lookupPit(pitNumber);
+            Pit foundPit = null;
+            while(true) {
+                foundPit = lookupPit(pitNumber);
+                if (pitExists(pitNumber)) {
+                    break;
+                }
+            }
             System.out.println("Please enter zone, please 0 to see zones");
             int zone = Integer.valueOf(scanner.nextLine());
             if (zone == 0) {
@@ -346,12 +422,46 @@ public class UI {
         }
 
 
-        private void calculateFromCustomerPrice(Pit pit) {
+        private void calculateFromCustomerPrice() {
+            Pit pit = null;
+            int pitNumber = 0;
+            while(true) {
+                System.out.println("Please enter pit number");
+                pitNumber = Integer.valueOf(scanner.nextLine());
+                if (pitExists(pitNumber)) {
+                    break;
+                }
+                System.out.println("That pit doesn't exit");
+            }
+            pit = lookupPit(pitNumber);
             System.out.println("Please enter customer name");
             String custName = scanner.nextLine();
+            Customer cust = returnCustomer(custName);
             System.out.println("Please enter product code");
-            int prodCode = Integer.valueOf(scanner.nextLine());
-            System.out.println();
+            Product prod = lookUpProduct(custName, Integer.valueOf(scanner.nextLine()));
+            System.out.println("Please enter zone");
+            int zoneNumber = Integer.valueOf(scanner.nextLine());
+            Zone foundZone = returnZone(zoneNumber);
+            Freight freight = new Freight(pit, cust, prod, foundZone);
+            System.out.println(freight.deliveredString());
+        }
+
+
+        public void calculateCustomFreight() {
+        while(true) {
+            System.out.println("Enter price, 0 to go back");
+            double price = Double.valueOf(scanner.nextLine());
+            if (price == 0) {
+                break;
+            }
+            System.out.println("Please enter kms to calculate");
+            int kms = Integer.valueOf(scanner.nextLine());
+            System.out.println("Pleas enter rate, ex/ 14.5");
+            double rate = (Double.valueOf(scanner.nextLine()) / 100);
+            double ratePerKm = rate * kms;
+            System.out.println("Product Price: " + formatter(price) + "\n" + "Haul Rate: " + formatter(ratePerKm) + " a ton" + "\n" + "Delivered Price(Deducted): " + formatter((price - ratePerKm))
+                    + "\n" + "Delivered Price(added): " + formatter((price + ratePerKm)));
+        }
         }
 
 
@@ -363,10 +473,20 @@ public class UI {
             System.out.println("Choose an option");
             int option = Integer.valueOf(scanner.nextLine());
             if (option == 1) {
-                System.out.println("Please enter pit number");
-                int pitNumber = Integer.valueOf(scanner.nextLine());
+                int pitNumber = 0;
+
+                while(true) {
+                    System.out.println("Please enter pit number");
+                        pitNumber = Integer.valueOf(scanner.nextLine());
+                        if (pitExists(pitNumber)) {
+                            break;
+                        }
+                        System.out.println("That pit doesn't exist");
+
+                }
+
                 Pit foundPit = lookupPit(pitNumber);
-                System.out.println("Pick up or delivery('P' for pickup and 'D' for delivery, B for back");
+                System.out.println("Pick up or delivery('P' for pickup and 'D' for delivery, B for back)");
                 String choice = scanner.nextLine();
                 if (choice.toUpperCase().equals("P")) {
                     calculatePickupPrice(foundPit);
@@ -381,12 +501,21 @@ public class UI {
             }
 
             if (option == 2) {
-                System.out.println();
+                calculateFromCustomerPrice();
+            }
+
+            if (option == 3) {
+                calculateCustomFreight();
+            }
+            if (option == 4) {
+               break;
+
+                }
             }
         }
 
 
-    }
+
 
     private Zone returnZone(int zoneNumber) {
         return zoneList.get(zoneNumber - 1);

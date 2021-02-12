@@ -5,12 +5,10 @@
       <change beforePath="$PROJECT_DIR$/../NFLRoster/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../NFLRoster/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PlayingWithRandomNumbers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PlayingWithRandomNumbers/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PricingCalculator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PricingCalculator/out/production/PricingCalculator/com/brycelooyenga/pricingcalculator/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/out/production/PricingCalculator/com/brycelooyenga/pricingcalculator/Customer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PricingCalculator/out/production/PricingCalculator/com/brycelooyenga/pricingcalculator/UI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/out/production/PricingCalculator/com/brycelooyenga/pricingcalculator/UI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Freight.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Freight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Pit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Pit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/Quote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PricingCalculator/src/com/brycelooyenga/pricingcalculator/UI.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -71,7 +69,7 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/brycelooyenga/loancalculator/LoanCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -249,13 +247,13 @@
       <window_info id="Image Layers" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.38845402" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.3731203" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32901135" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2954876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

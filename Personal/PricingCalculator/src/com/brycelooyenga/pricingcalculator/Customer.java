@@ -91,6 +91,28 @@ public class Customer {
     }
 
 
+    public static String dotCount(int stringLength) {
+        String dots = "";
+        for (int i = 0; i < (30 - stringLength); i++) {
+            dots+=".";
+        }
+  return dots;  }
+
+    private String formatter(double amount) {
+        return String.format("$" + "%.2f", amount);
+    }
+
+
+    public void printPriceList() {
+        String dots = "";
+        System.out.println();
+        System.out.println("=======" + this.name.toUpperCase() + "=======");
+        for (int i = 0; i < priceList.getProducts().size(); i++) {
+            System.out.println(priceList.getProducts().get(i).getName() + dotCount(priceList.getProducts().get(i).getName().length()) +  formatter(priceList.getProducts().get(i).getPrice()));
+        }
+    }
+
+
 
 
 

@@ -39,4 +39,6 @@ public class Zone {
     public double getZoneRate(Pit pit, int zoneNumber) {
         return pit.getRate(zoneNumber);
      }
+
+
 }
