@@ -29,6 +29,7 @@ public class Pit {
 
     public double getRate(int zone) {
         return rates.get(zone - 1);
+
     }
 
     public ArrayList<Product> getProducts() {

@@ -21,6 +21,7 @@ public class Freight {
    }
 
 
+
     public double calculateDeliveredPriceSub(double price) {
         return price - pit.getRate(zone.getZoneNumber());
     }
@@ -37,18 +38,6 @@ public class Freight {
         return price - pit.getPickupDiscount();
     }
 
-    public double calculateFreight(int kms, double rate) {
-        return kms * (100/rate);
-    }
-
-    public double deliverNoProduct(double price) {
-        return price - pit.getRate(this.zone.getZoneNumber());
-    }
-
-    public String deliverNoProductToString(double price) {
-        return  pit.getPitNumber() + ": " + price + " - " + pit.getRate(this.zone.getZoneNumber())
-                + " = " + formatter(price - pit.getRate(this.zone.getZoneNumber()));
-    }
 
     public String pickUpString(double price) {
         return "Product Price: " + formatter(price) + " - " + "Pick Up Discount from " +
@@ -58,7 +47,7 @@ public class Freight {
 
     public String deliveredString(double price) {
        return (formatter(price) + "\n" + "Zone: " + zone.getZoneName() + "\n" + "Freight Rate: "
-               + formatter(pit.getRate(zone.getZoneNumber())) +    "\n" +
+               + formatter(pit.getRate(zone.getZoneNumber()))+    "\n" +
         "Price Delivered: (freight added): " + formatter(calculateDeliveredPriceAdd(price)) + "\n" +
         "Price Delivered: (freight deducted): " + formatter(calculateDeliveredPriceSub(price))) + "\n";
 
@@ -69,6 +58,14 @@ public class Freight {
                 + formatter(pit.getRate(zone.getZoneNumber())) +    "\n" +
                 "Price Delivered: (freight added): " + formatter(calculateDeliveredPriceAdd(product.getPrice())) + "\n" +
                 "Price Delivered: (freight deducted): " + formatter(calculateDeliveredPriceSub(product.getPrice()))) + "\n";
+
+    }
+
+    public String customRate(double freight, double price) {
+        return (formatter(price) + "\n" + "Zone: " + zone.getZoneName()) + "\n" + "Freight Rate: "
+                + formatter(freight) +    "\n" +
+                "Price Delivered: (freight added): " + formatter(freight + price) + "\n" +
+                "Price Delivered: (freight deducted): " + formatter(price - freight) + "\n";
 
     }
 

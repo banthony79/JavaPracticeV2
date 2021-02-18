@@ -11,17 +11,25 @@ public class Zone {
     ArrayList<Double> prices;
     private int zoneNumber;
 
-    public Zone(String zoneName, int zoneNumber) {
+    public Zone(String zoneName, int zoneNumber, double price) {
         this.zoneName = zoneName;
         this.pits = new ArrayList<>();
         this.prices = new ArrayList<>();
-        this.zoneNumber = zoneNumber;
+        if (zoneNumber == 15) {
+           customFreight(price);
+        } else {
+            this.zoneNumber = zoneNumber;
+        }
 
     }
 
 
     public String getZoneName() {
         return zoneName;
+    }
+
+    private void customFreight(double price) {
+        this.prices.add(0, price);
     }
 
     public ArrayList<Pit> getPits() {
@@ -39,6 +47,12 @@ public class Zone {
     public double getZoneRate(Pit pit, int zoneNumber) {
         return pit.getRate(zoneNumber);
      }
+
+     public void setZonePrice(double price) {
+
+     }
+
+
 
 
 }
