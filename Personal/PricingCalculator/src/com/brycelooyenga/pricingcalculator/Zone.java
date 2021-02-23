@@ -1,6 +1,5 @@
 package com.brycelooyenga.pricingcalculator;
 
-import com.sun.corba.se.impl.interceptors.PICurrent;
 
 import java.util.ArrayList;
 
@@ -11,16 +10,11 @@ public class Zone {
     ArrayList<Double> prices;
     private int zoneNumber;
 
-    public Zone(String zoneName, int zoneNumber, double price) {
+    public Zone(String zoneName, int zoneNumber) {
         this.zoneName = zoneName;
         this.pits = new ArrayList<>();
         this.prices = new ArrayList<>();
-        if (zoneNumber == 15) {
-           customFreight(price);
-        } else {
-            this.zoneNumber = zoneNumber;
-        }
-
+        this.zoneNumber = zoneNumber;
     }
 
 
@@ -29,7 +23,7 @@ public class Zone {
     }
 
     private void customFreight(double price) {
-        this.prices.add(0, price);
+        this.prices.add(price);
     }
 
     public ArrayList<Pit> getPits() {
@@ -48,9 +42,10 @@ public class Zone {
         return pit.getRate(zoneNumber);
      }
 
-     public void setZonePrice(double price) {
-
+     public void setZone15(double freight) {
+        prices.add(freight);
      }
+
 
 
 

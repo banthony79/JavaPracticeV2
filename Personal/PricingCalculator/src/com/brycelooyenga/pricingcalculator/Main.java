@@ -36,10 +36,12 @@ public class Main {
 
 
 
+            double[] southPit = {7.75, 7.40, 6.85, 6.85, 6.35, 7.95, 8.45, 00, 12.35, 4.25, 9.75, 11.60, 11.70, 0};
+
+            System.out.println(southPit.length);
 
 
-
-            ui.start();
+           // ui.start();
 
 
         }

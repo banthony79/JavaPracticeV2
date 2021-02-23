@@ -64,11 +64,11 @@ public class UI {
     }
 
     private void builder() {
-        double[] southPit = {7.75, 7.40, 6.85, 6.85, 6.35, 7.95, 8.45, 00, 12.35, 4.25, 9.75, 11.60, 11.70, 0};
-        double[] westPit = {7.50, 8.16, 8.16, 9.18, 8.50, 9.50, 4.50, 0, 0, 10.50, 12.10, 9.80, 12.50, 0};
-        double[] farWestPit = {8.55, 9.00, 9.00, 9.84, 9.84, 9.61, 10.55, 4.75, 00, 00, 11.60, 13.15, 11.35, 13.50};
-        double[] northPit = {0, 3.22, 3.80, 4.50, 3.00, 3.85, 5.50, 10.30, 8.00, 5.50, 7.10, 4.15};
-        double[] eastPit = {6.00, 5.65, 5.65, 4.60, 6.35, 6.90, 8.60, 6.35, 8.55, 8.50, 9.85, 7.70};
+        double[] southPit = {7.75, 7.40, 6.85, 6.85, 6.35, 7.95, 8.45, 00, 12.35, 4.25, 9.75, 11.60, 11.70, 0, 0, 0};
+        double[] westPit = {7.50, 8.16, 8.16, 9.18, 8.50, 9.50, 4.50, 0, 0, 10.50, 12.10, 9.80, 12.50, 0, 0};
+        double[] farWestPit = {8.55, 9.00, 9.00, 9.84, 9.84, 9.61, 10.55, 4.75, 00, 00, 11.60, 13.15, 11.35, 13.50, 0, 0};
+        double[] northPit = {0, 3.22, 3.80, 4.50, 3.00, 3.85, 5.50, 10.30, 8.00, 5.50, 7.10, 4.15, 0, 0, 0};
+        double[] eastPit = {6.00, 5.65, 5.65, 4.60, 6.35, 6.90, 8.60, 6.35, 8.55, 8.50, 9.85, 7.70, 0, 0, 0};
 
 
         addPit("South Pit", 9407, 6);
@@ -106,7 +106,7 @@ public class UI {
     }
 
     public void addZone(String zoneName, int zoneNumber) {
-        Zone zone = new Zone(zoneName, zoneNumber, 0);
+        Zone zone = new Zone(zoneName, zoneNumber);
         zoneBuilder(zone);
         zoneList.add(zone);
     }
@@ -248,6 +248,7 @@ public class UI {
     }
 
 
+
     private Product productLookUpByCode(String custName, String input, boolean display) {
         int code = Integer.valueOf(input);
         if (lookUpPrice(custName, code) != -1) {
@@ -322,6 +323,14 @@ public class UI {
 
     }
 
+    public double deliveredPrice(Pit pit, double price, int zone, boolean added) {
+        if (added) {
+            return price + pit.getRate(zone);
+        } else {
+            return price - pit.getRate(zone);
+        }
+    }
+
     private Pit lookupPit(int pitNumber) {
 
         for (Pit pit : pitList) {
@@ -394,15 +403,22 @@ public class UI {
                 zone = Integer.valueOf(scanner.nextLine());
                 System.out.println();
             }
-
+            Quote quote = null;
+            double deliveredPriceDeducted = 0;
+            double deliveredPriceAdded = 0;
             if (zone == 15) {
-                calcuateZone15(quotedProduct, quotedCustomer, foundPit);
+            deliveredPriceAdded =  calcuateZone15(quotedProduct.getPrice(), true);
+           // quote =
+
+
+            } else {
+
+                deliveredPriceDeducted = quotedProduct.getPrice() - foundPit.getRate(zone);
+                System.out.println();
+                //quote = new Quote(quotedCustomer, quotedProduct, tonnage, foundPit, deliveredPri);
+                System.out.println(quote);
             }
 
-            double deliveredPrice = quotedProduct.getPrice() - foundPit.getRate(zone);
-            System.out.println();
-            Quote quote = new Quote(quotedCustomer, quotedProduct, tonnage, foundPit, zone);
-            System.out.println(quote);
             System.out.println("Press 'S' to add to quote list");
             String choice = scanner.nextLine();
             if (choice.toUpperCase().equals("S")) {
@@ -533,13 +549,16 @@ public class UI {
         }
     }
 
-    private void calcuateZone15(Product product, Customer customer, Pit pit) {
+    private double calcuateZone15(double price, boolean added) {
         System.out.println("Please enter freight");
-        double price = Double.valueOf(scanner.nextLine());
-        Zone zone = new Zone("Custom", 15, price);
-        Freight freight1 = new Freight(pit, customer, product, zone);
-        freight1.customRate(price, product.getPrice());
+        double freight = Double.valueOf(scanner.nextLine());
+        if (added) {
+            return price + freight;
+        } else {
+            return price - freight;
+        }
     }
+
 
 
     private Zone returnZone(int zoneNumber) {
