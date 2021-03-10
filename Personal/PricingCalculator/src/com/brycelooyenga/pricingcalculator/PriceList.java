@@ -23,6 +23,13 @@ public class PriceList {
     }
 
 
+    public void addZones(ArrayList<Zone> masterZoneList) {
+        for (Zone zone: masterZoneList) {
+            if (zone.getPit().equals(this)) {
+
+            }
+        }
+    }
 
 
     public boolean addProduct(Product product) {
@@ -80,8 +87,12 @@ public class PriceList {
             this.prices.get(i).
                     setPrice(price * (percentage));
         }
-    return this;
+        return this;
     }
+
+
+
+
 
 
 

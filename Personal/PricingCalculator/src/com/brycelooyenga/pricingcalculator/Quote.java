@@ -8,17 +8,19 @@ public class Quote {
     private Product product;
     private int tonnage;
     private Pit pit;
-    private double freight;
-    private boolean freightAdded;
+    private int zoneNumber;
 
 
-    public Quote(Customer customer, Product product, int tonnage, Pit pit, double freight, boolean freightAdded) {
+
+
+    public Quote(Customer customer, Product product, int tonnage, Pit pit, int zoneNumber) {
         this.customer = customer;
         this.product = product;
         this.tonnage = tonnage;
         this.pit = pit;
-        this.freight = freight;
-        this.freightAdded = freightAdded;
+        this.zoneNumber = zoneNumber;
+
+
     }
 
     public Customer getCustomer() {
@@ -44,29 +46,50 @@ public class Quote {
         return product.getPrice() * tonnage;
     }
 
-    public double deliveredPrice(double price, int zone) {
+    public double deliveredPrice(int zone, boolean freightAdded) {
+        double finalPrice = 0; Zone newZone = pit.returnZone(zone);
         if (freightAdded) {
-            return price + pit.getRate(zone);
+            return product.getPrice() + newZone.getFreight();
         } else {
-            return price - pit.getRate(zone);
+            return product.getPrice() - newZone.getFreight();
         }
     }
 
 
-   /* public String freightString(int zone) {
-        return this.pit.getPitNumber() + " || " + this.customer.getName() +
+   public String freightString(int zone) {
+        double finalPrice = 0; Zone newZone = pit.returnZone(zone);
+        return
+                "FREIGHT ADDED: " + "\n" + this.pit.getPitNumber() + " || " + this.customer.getName() +
                 " || " + tonnage + " tons of " + this.product.getName() + " || " +
-                " || $" + decimalFormatter(product.getPrice()) + " - $" + decimalFormatter(this.pit.getRate(zone)) +
-                " = $" + decimalFormatter(deliveredPrice(this.product.getPrice(), zone);
-    } */
+                " || $" + decimalFormatter(product.getPrice()) + " + $" + newZone.getFreight() +
+                " = $" + decimalFormatter(deliveredPrice(zone,  true)) + "\n" +
+                "FREIGHT DEDUCTED:" + "\n" +
+                this.pit.getPitNumber() + " || " + this.customer.getName() +
+                " || " + tonnage + " tons of " + this.product.getName() + " || " +
+                " || $" + decimalFormatter(product.getPrice()) + " - $" + (newZone.getFreight()) +
+                " = $" + decimalFormatter(deliveredPrice(zone, false));
+
+        }
 
 
-    public String addedFreight(int zone) {
-        return this.pit.getPitNumber() + " || " + this.customer.getName() +
-                " || " + tonnage + " tons of " + this.product.getName() + " || " +
-                " || $" + decimalFormatter(product.getPrice()) + " + $" + decimalFormatter(this.pit.getRate(zone)) +
-                " = $" + decimalFormatter(deliveredPrice(this.product.getPrice(), zone)) + " a ton";
+    public String Zone15String(Zone zone) {
+        return
+                "FREIGHT ADDED: " + "\n" + this.pit.getPitNumber() + " || " + this.customer.getName() +
+                        " || " + tonnage + " tons of " + this.product.getName() + " || " +
+                        " || $" + decimalFormatter(product.getPrice()) + " + $" + decimalFormatter(zone.getFreight()) +
+                        " = $" + decimalFormatter(product.getPrice() + zone.getFreight()) + "\n" +
+                        "FREIGHT DEDUCTED:" + "\n" +
+                        this.pit.getPitNumber() + " || " + this.customer.getName() +
+                        " || " + tonnage + " tons of " + this.product.getName() + " || " +
+                        " || $" + decimalFormatter(product.getPrice()) + " - $" + decimalFormatter(zone.getFreight()) +
+                        " = $" + decimalFormatter(product.getPrice() - zone.getFreight());
+
     }
+
+
+
+
+
 
 
     private String decimalFormatter(double amount) {

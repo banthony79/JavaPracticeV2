@@ -1,4 +1,4 @@
-package com.brycelooyenga.pricingcalculator;
+package com.brycelooyenga.zonermaker;
 
 public class Zone {
 
@@ -10,7 +10,7 @@ public class Zone {
 
     public static  String[] zoneNames = {"N Saskatoon", "W Saskatoon", "NE Saskatoon",
             "E Saskatoon", "Martensville", "Warman", "Langham", "Allan", "Dundurn", "Vanscoy", "Asquith",
-            "Delisle", "Osler", "Osler", null, "Custom"};
+            "Delisle", "Osler", "Osler"};
 
 
     public Zone(Pit pit, int zoneNumber) {

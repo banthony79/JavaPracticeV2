@@ -6,16 +6,19 @@ public class Pit {
 
     private String pitName;
     private int pitNumber;
-    private ArrayList<Double> rates;
     private ArrayList<Product> products;
+    private ArrayList<Zone> rateList;
     private double pickupDiscount;
+
 
     public Pit(String pitName, int pitNumber, double pickupDiscount) {
         this.pitName = pitName;
         this.pitNumber = pitNumber;
-        this.rates = new ArrayList<>();
         this.pickupDiscount = pickupDiscount;
         this.products = new ArrayList<>();
+        this.rateList = new ArrayList<>();
+
+
     }
 
 
@@ -27,38 +30,68 @@ public class Pit {
         return pitNumber;
     }
 
-    public double getRate(int zone) {
-        return rates.get(zone - 1);
 
-    }
 
     public ArrayList<Product> getProducts() {
         return products;
     }
 
-    public ArrayList<Double> getRates() {
-        return this.rates;
-    }
 
     public double getPickupDiscount() {
         return this.pickupDiscount;
     }
 
-    public void addRates(double [] sourceRates) {
-            for (int i = 0; i < sourceRates.length; i++) {
-                this.rates.add(sourceRates[i]);
+    public void addZone(ArrayList<Zone> masterZoneList) {
+        for (Zone zone: masterZoneList) {
+            if (zone.getPit().equals(this)) {
+                rateList.add(zone);
             }
         }
 
-    @Override
-    public String toString() {
-       return this.pitNumber + ": " + this.pitName;
     }
+
+
+    public Zone returnZone(int zoneNumber) {
+        for (Zone zone: rateList) {
+            if (zone.getZoneNumber() == zoneNumber) {
+                return zone;
+            }
+        }
+   return null; }
 
 
     public void addProduct(Product product) {
         this.products.add(product);
     }
+
+    public void displayRates(ArrayList<Zone> zoneList) {
+        for (Zone zone: zoneList) {
+            if (zone.getPit().getPitNumber() == this.getPitNumber()) {
+                System.out.println(zone);
+            }
+        }
+    }
+
+
+
+
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+
+        if (this.pitNumber == ((Pit) obj).getPitNumber()) {
+            return true;
+        }
+
+   return false; }
+
 
 
 

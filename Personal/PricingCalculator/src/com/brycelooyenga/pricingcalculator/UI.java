@@ -20,15 +20,21 @@ public class UI {
         this.pitList = new ArrayList<>();
         this.scanner = scanner;
         this.zoneList = new ArrayList<>();
-        builder();
 
 
     }
 
 
-    private static String[] zoneNames = {"North Saskatoon", "West Saskatoon", "North East Saskatoon",
-            "East Saskatoon", "Martensville", "Warman", "Langham", "Allan", "Dundurn", "Vanscoy", "Asquith"};
+    private static double[] southPit = {7.75, 7.40, 6.85, 6.85, 6.35, 7.95, 8.45, 00, 12.35, 4.25, 9.75, 11.60, 11.70, 0};
+    private static double[] westPit = {7.50, 8.16, 8.16, 9.18, 8.50, 9.50, 4.50, 0, 0, 10.50, 12.10, 9.80, 12.50, 0, 0};
+    private static double[] farWestPit = {8.55, 9.00, 9.00, 9.84, 9.84, 9.61, 10.55, 4.75, 00, 00, 11.60, 13.15, 11.35, 13.50, 0, 0};
+    private static double[] northPit = {0, 3.22, 3.80, 4.50, 3.00, 3.85, 5.50, 10.30, 8.00, 5.50, 7.10, 4.15, 0, 0, 0};
+    private static double[] eastPit = {6.00, 5.65, 5.65, 4.60, 6.35, 6.90, 8.60, 6.35, 8.55, 8.50, 9.85, 7.70, 0, 0, 0};
 
+
+    public ArrayList<Zone> getZoneList() {
+        return zoneList;
+    }
 
     public void start() {
 
@@ -63,52 +69,40 @@ public class UI {
         }
     }
 
-    private void builder() {
-        double[] southPit = {7.75, 7.40, 6.85, 6.85, 6.35, 7.95, 8.45, 00, 12.35, 4.25, 9.75, 11.60, 11.70, 0, 0, 0};
-        double[] westPit = {7.50, 8.16, 8.16, 9.18, 8.50, 9.50, 4.50, 0, 0, 10.50, 12.10, 9.80, 12.50, 0, 0};
-        double[] farWestPit = {8.55, 9.00, 9.00, 9.84, 9.84, 9.61, 10.55, 4.75, 00, 00, 11.60, 13.15, 11.35, 13.50, 0, 0};
-        double[] northPit = {0, 3.22, 3.80, 4.50, 3.00, 3.85, 5.50, 10.30, 8.00, 5.50, 7.10, 4.15, 0, 0, 0};
-        double[] eastPit = {6.00, 5.65, 5.65, 4.60, 6.35, 6.90, 8.60, 6.35, 8.55, 8.50, 9.85, 7.70, 0, 0, 0};
 
 
-        addPit("South Pit", 9407, 6);
-        addPit("West Pit", 9414, 7.50);
-        addPit("East Pit", 9408, 5);
-        addPit("Far West Pit", 9402, 7);
-        addPit("North Yard", 9428, 0);
-        addRates(9407, southPit);
-        addRates(9414, westPit);
-        addRates(9408, eastPit);
-        addRates(9428, northPit);
-        addRates(9402, farWestPit);
 
-        String[] names = {"NW Saskatoon", "SW Saskatoon", "NE Saskatoon",
-                "SE Saskatoon", "Martensville", "Warman", "Langham", "Allan", "Dundurn", "Vanscoy", "Asquith"};
+    public void assignFreight(double [] pricingArray, int pitNumber) {
 
-        for (int i = 0; i < names.length; i++) {
-            addZone(names[i], (i + 1));
-        }
+        for (int i = 0; i < zoneList.size(); i++) {
+            if (zoneList.get(i).getPit().getPitNumber() == pitNumber) {
+                zoneList.get(i).setFreight(pricingArray[zoneList.get(i).getZoneNumber()]);
 
-    }
-
-
-    //BUILDING THINGS METHODS
-
-
-    private void zoneBuilder(Zone zone) {
-        int count = 0;
-        for (int i = 0; i < pitList.size(); i++) {
-            zone.getPits().add(i, pitList.get(i));
-            for (int j = 0; j < pitList.get(i).getRates().size(); j++) {
-                zone.getPrices().add(j, pitList.get(i).getRates().get(j));
             }
         }
     }
 
-    public void addZone(String zoneName, int zoneNumber) {
-        Zone zone = new Zone(zoneName, zoneNumber);
-        zoneBuilder(zone);
-        zoneList.add(zone);
+
+
+    public void zoneCreator(ArrayList<Pit> pits, ArrayList<Zone> zoneArrayList) {
+        Pit pit = null; int zoneNumber = 0;
+        for (int j = 0; j < 13; j++) {
+            for (int i = 0; i < pits.size(); i++) {
+                pit = pits.get(i);
+                zoneNumber = j;
+                Zone zone = new Zone(pit, zoneNumber);
+                zoneArrayList.add(zone);
+
+
+            }
+        }
+
+    }
+
+    public void displayZones(ArrayList<Zone> zoneList) {
+        for (Zone zone: zoneList) {
+            System.out.println(zone);
+        }
     }
 
 
@@ -158,7 +152,9 @@ public class UI {
 
 
     public void addPit(String name, int pitNumber, double pitDiscount) {
-        pitList.add(new Pit(name, pitNumber, pitDiscount));
+        Pit newPit = new Pit(name, pitNumber, pitDiscount);
+      newPit.addZone(zoneList);
+      pitList.add(newPit);
     }
 
     public PriceList newPriceList(String name, double percentage) {
@@ -178,7 +174,7 @@ public class UI {
     public void addProductToPit(int productCode, int pitNumber) {
         Pit pit = lookupPit(pitNumber);
         Product prod = findProduct(productCode);
-        pit.addProduct(prod);
+       // pit.addProduct(prod);
     }
 
 
@@ -323,13 +319,6 @@ public class UI {
 
     }
 
-    public double deliveredPrice(Pit pit, double price, int zone, boolean added) {
-        if (added) {
-            return price + pit.getRate(zone);
-        } else {
-            return price - pit.getRate(zone);
-        }
-    }
 
     private Pit lookupPit(int pitNumber) {
 
@@ -341,11 +330,6 @@ public class UI {
 
         return null;
 
-    }
-
-
-    private String returnZoneName(int zone) {
-        return zoneNames[zone - 1];
     }
 
 
@@ -398,25 +382,21 @@ public class UI {
             System.out.println("Please enter zone, please 0 to see zones");
             int zone = Integer.valueOf(scanner.nextLine());
             if (zone == 0) {
-                dispayRates(foundPit);
+                foundPit.displayRates(zoneList);
                 System.out.println("Please enter zone");
                 zone = Integer.valueOf(scanner.nextLine());
                 System.out.println();
             }
-            Quote quote = null;
-            double deliveredPriceDeducted = 0;
-            double deliveredPriceAdded = 0;
+            Quote quote = new Quote(quotedCustomer, quotedProduct, tonnage, foundPit, zone);
+
             if (zone == 15) {
-            deliveredPriceAdded =  calcuateZone15(quotedProduct.getPrice(), true);
-           // quote =
-
-
+            System.out.println("Please enter freight");
+            double freight = Double.valueOf(scanner.nextLine());
+            Zone customZone = new Zone(foundPit, 15);
+            customZone.setFreight(freight);
+            System.out.println(quote.Zone15String(customZone));
             } else {
-
-                deliveredPriceDeducted = quotedProduct.getPrice() - foundPit.getRate(zone);
-                System.out.println();
-                //quote = new Quote(quotedCustomer, quotedProduct, tonnage, foundPit, deliveredPri);
-                System.out.println(quote);
+                quote.freightString(zone);
             }
 
             System.out.println("Press 'S' to add to quote list");
@@ -452,7 +432,7 @@ public class UI {
         System.out.println("Please enter zone");
         Zone foundZone = returnZone(Integer.valueOf(scanner.nextLine()));
         Freight freight = new Freight(pit, null, null, foundZone);
-        System.out.println(freight.deliveredString(price));
+       // System.out.println(freight.deliveredString(price)); //fix
 
 
     }
@@ -479,7 +459,7 @@ public class UI {
         int zoneNumber = Integer.valueOf(scanner.nextLine());
         Zone foundZone = returnZone(zoneNumber);
         Freight freight = new Freight(pit, cust, prod, foundZone);
-        System.out.println(freight.deliveredString());
+       // System.out.println(freight.deliveredString()); //fix
     }
 
 
@@ -577,13 +557,6 @@ public class UI {
     return true;  }
 
 
-    public boolean addRates(int pitNumber, double [] rateList) {
-        if (checkPit(pitNumber)) {
-            Pit pit = lookupPit(pitNumber);
-            pit.addRates(rateList);
-            return true;
-        }
-   return false; }
 
 
 
@@ -602,11 +575,6 @@ public class UI {
     }
 
 
-    private void dispayRates(Pit pit) {
-     for (int i = 0; i < zoneNames.length; i++) {
-         System.out.println(("Zone " + (i + 1) + ": " + returnZone(i + 1).getZoneName() + " - $" + pit.getRates().get(i)));
-     }
-    }
 
 
 

@@ -7,8 +7,9 @@ public class Customer {
 
     private String name;
     private int customerID;
-    PriceList priceList;
+    private PriceList priceList;
     private ArrayList<Quote> quoteList;
+
 
     Random rand = new Random();
 
@@ -18,6 +19,7 @@ public class Customer {
         this.priceList = priceList;
         this.customerID = rand.nextInt(999);
         this.quoteList = new ArrayList<>();
+
 
 
     }

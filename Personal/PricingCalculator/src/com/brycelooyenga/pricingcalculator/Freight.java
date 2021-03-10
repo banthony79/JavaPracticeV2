@@ -22,13 +22,13 @@ public class Freight {
 
 
 
-    public double calculateDeliveredPriceSub(double price) {
+   /* public double calculateDeliveredPriceSub(double price) {
         return price - pit.getRate(zone.getZoneNumber());
     }
 
     public double calculateDeliveredPriceAdd(double price) {
         return price + pit.getRate(zone.getZoneNumber());
-    }
+    } */
 
     public double pickUp() {
         return product.getPrice() - pit.getPickupDiscount();
@@ -47,9 +47,9 @@ public class Freight {
                 + "\n";
     }
 
-    public String deliveredString(double price) {
+   /* public String deliveredString(double price) {
        return (formatter(price) + "\n" + "Zone: " + zone.getZoneName() + "\n" + "Freight Rate: "
-               + formatter(pit.getRate(zone.getZoneNumber()))+    "\n" +
+               + formatter(1.5)) +   "\n" +
         "Price Delivered: (freight added): " + formatter(calculateDeliveredPriceAdd(price)) + "\n" +
         "Price Delivered: (freight deducted): " + formatter(calculateDeliveredPriceSub(price))) + "\n";
 
@@ -63,7 +63,7 @@ public class Freight {
                 "Price Delivered: (freight deducted): " + formatter(calculateDeliveredPriceSub(product.getPrice()))) + "\n";
 
     }
-
+*/
 
 
 
